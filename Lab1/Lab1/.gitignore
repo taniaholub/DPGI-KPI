@@ -1,0 +1,18 @@
+# Вихідні файли та збірки
+bin/
+obj/
+*.exe
+*.dll
+*.pdb
+
+# Налаштування Visual Studio
+.vs/
+*.user
+*.suo
+*.vcxproj.*
+*.csproj.user
+
+# Файли тестування та журналів
+TestResults/
+*.log
+*.tlog
