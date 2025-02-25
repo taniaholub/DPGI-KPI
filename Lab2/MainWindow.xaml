@@ -1,44 +1,72 @@
 ﻿<Window x:Class="Lab2.Views.Task2.TextEditor"
- xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
- xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
- xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
- xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
- mc:Ignorable="d"
- WindowStartupLocation="CenterScreen"
- Title="TextEditor" MinHeight="250" Height="450" MinWidth="300" Width="600">
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    mc:Ignorable="d"
+    WindowStartupLocation="CenterScreen"
+    Title="TextEditor" MinHeight="250" Height="450" MinWidth="300" Width="600">
+
+    <Window.Resources>
+        <!-- Градієнтна заливка жовто-бірюзово-жовта -->
+        <LinearGradientBrush x:Key="LinearPanelBrush" StartPoint="0,0" EndPoint="1,0">
+            <GradientStop Color="Yellow" Offset="0"/>
+            <GradientStop Color="Aqua" Offset="0.5"/>
+            <GradientStop Color="Yellow" Offset="1"/>
+        </LinearGradientBrush>
+
+        <!-- Стиль кнопок -->
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+    </Window.Resources>
+
     <Grid ShowGridLines="False">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-        <Border Grid.Row="0" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10">
+
+        <!-- Панель інструментів із градієнтною заливкою -->
+        <Border Grid.Row="0" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10"
+                Background="{StaticResource LinearPanelBrush}">
             <StackPanel Grid.Row="0" Orientation="Horizontal">
-                <Button Width="50" Height="50">
+                <Button Width="50" Height="50" Style="{StaticResource ButtonStyle}">
                     <Image ToolTip="Open" Source="C:\Users\Тетяна\Source\Repos\DPGI-KPI\Lab2\Images\OpenFolderIcon.png"/>
                 </Button>
-                <Button Width="50" Height="50">
+                <Button Width="50" Height="50" Style="{StaticResource ButtonStyle}">
                     <Image ToolTip="Clear" Source="C:\Users\Тетяна\Source\Repos\DPGI-KPI\Lab2\Images\ClearIcon.png"/>
                 </Button>
-                <Button Width="50" Height="50">
+                <Button Width="50" Height="50" Style="{StaticResource ButtonStyle}">
                     <Image ToolTip="Copy" Source="C:\Users\Тетяна\Source\Repos\DPGI-KPI\Lab2\Images\CopyIcon.png"/>
                 </Button>
-                <Button Width="50" Height="50">
+                <Button Width="50" Height="50" Style="{StaticResource ButtonStyle}">
                     <Image ToolTip="Paste" Source="C:\Users\Тетяна\Source\Repos\DPGI-KPI\Lab2\Images\PasteIcon.png"/>
                 </Button>
             </StackPanel>
         </Border>
-        <Border Grid.Row="1" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10">
+
+        <!-- Область текстового поля з градієнтною заливкою -->
+        <Border Grid.Row="1" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10"
+                Background="{StaticResource LinearPanelBrush}">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition />
+                    <RowDefinition/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
+
                 <TextBox Grid.Row="0" Margin="10" TextWrapping="Wrap"
-VerticalScrollBarVisibility="Visible"/>
+                         VerticalScrollBarVisibility="Visible"/>
+
                 <DockPanel Grid.Row="1" Margin="10 5 10 10">
+                    <!-- Кнопка "OK" без стилю -->
                     <Button Width="30" DockPanel.Dock="Bottom" Content="OK" />
                 </DockPanel>
             </Grid>
         </Border>
     </Grid>
+
 </Window>
