@@ -5,31 +5,11 @@
  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
  mc:Ignorable="d"
  WindowStartupLocation="CenterScreen"
-Title="Task 1 | WrapPanel" Height="250" Width="500">
-    <Grid Margin="30 60">
-        <WrapPanel>
-            <Label>Label</Label>
-            <TextBox>TextBox</TextBox>
-            <TextBox>TextBox</TextBox>
-            <TextBox>TextBox</TextBox>
-            <TextBox>TextBox</TextBox>
-            <TextBox>TextBox</TextBox>
-            <TextBox>TextBox</TextBox>
-            <TextBox>TextBox</TextBox>
-            <TextBox>TextBox</TextBox>
-
-            <Label>Label</Label>
-            <TextBox>TextBox</TextBox>
-            <TextBox>TextBox</TextBox>
-            <TextBox>TextBox</TextBox>
-            <TextBox>TextBox</TextBox>
-            <TextBox>TextBox</TextBox>
-            <TextBox>TextBox</TextBox>
-            <TextBox>TextBox</TextBox>
-            <TextBox>TextBox</TextBox>
-        </WrapPanel>
-
-        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 70 0
-0">Button</Button>
-    </Grid>
+Title="Task 1 | DockPanel" Height="250" Width="500">
+    <DockPanel LastChildFill="False">
+        <Label DockPanel.Dock="Top" HorizontalAlignment="Center">Label</Label>
+        <TextBox DockPanel.Dock="Left" Width="200">TextBox</TextBox>
+        <TextBox DockPanel.Dock="Right" Width="200">TextBox</TextBox>
+        <Button DockPanel.Dock="Bottom" Margin="0 0 0 35" Height="20" Width="70">Button</Button>
+    </DockPanel>
 </Window>
