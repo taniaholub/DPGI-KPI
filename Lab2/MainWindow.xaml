@@ -5,11 +5,10 @@
  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
  mc:Ignorable="d"
  WindowStartupLocation="CenterScreen"
-Title="Task 1 | DockPanel" Height="250" Width="500">
-    <DockPanel LastChildFill="False">
-        <Label DockPanel.Dock="Top" HorizontalAlignment="Center">Label</Label>
-        <TextBox DockPanel.Dock="Left" Width="200">TextBox</TextBox>
-        <TextBox DockPanel.Dock="Right" Width="200">TextBox</TextBox>
-        <Button DockPanel.Dock="Bottom" Margin="0 0 0 35" Height="20" Width="70">Button</Button>
-    </DockPanel>
+Title="Task 1 | Canvas" Height="450" Width="600">
+    <Canvas Background="Aqua">
+        <Label Canvas.Top="20" Canvas.Left="20">Label</Label>
+        <TextBox Canvas.Top="40" Canvas.Left="40">TextBox</TextBox>
+        <Button Canvas.Top="60" Canvas.Left="60">Button</Button>
+    </Canvas>
 </Window>
