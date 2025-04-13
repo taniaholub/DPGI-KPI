@@ -1,0 +1,61 @@
+﻿<Window x:Class="Lab5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Lab5" Height="500" Width="800">
+    <Grid>
+        <TabControl Name="MainTabControl" Margin="5">
+            <!-- Tab 1: Clients -->
+            <TabItem Header="Clients">
+                <Grid>
+                    <DataGrid Name="ClientsDataGrid" AutoGenerateColumns="True" Margin="5"/>
+                </Grid>
+            </TabItem>
+
+            <!-- Tab 2: Companies -->
+            <TabItem Header="Companies">
+                <Grid>
+                    <DataGrid Name="CompaniesDataGrid" AutoGenerateColumns="True" Margin="5"/>
+                </Grid>
+            </TabItem>
+
+            <!-- Tab 3: Minimum Expenses -->
+            <TabItem Header="Minimum Expenses">
+                <Grid>
+                    <DataGrid Name="MinExpensesDataGrid" AutoGenerateColumns="True" Margin="5"/>
+                </Grid>
+            </TabItem>
+
+            <!-- Tab 4: Client Search -->
+            <TabItem Header="Client Search">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" Margin="5">
+                        <TextBlock Text="Client Name:" VerticalAlignment="Center" Margin="5"/>
+                        <TextBox Name="ClientNameTextBox" Width="200" Margin="5"/>
+                        <Button Name="SearchClientButton" Content="Search" Click="SearchClientButton_Click" Margin="5"/>
+                    </StackPanel>
+                    <DataGrid Name="FilteredClientsDataGrid" AutoGenerateColumns="True" Margin="5" Grid.Row="1"/>
+                </Grid>
+            </TabItem>
+
+            <!-- Tab 5: Total Revenue by Companies -->
+            <TabItem Header="Revenue by Companies">
+                <Grid>
+                    <DataGrid Name="TotalRevenueDataGrid" AutoGenerateColumns="True" Margin="5"/>
+                </Grid>
+            </TabItem>
+
+            <!-- Tab 6: Clients and Companies (JOIN) -->
+            <TabItem Header="Clients and Companies">
+                <Grid>
+                    <DataGrid Name="ClientsWithCompaniesDataGrid" AutoGenerateColumns="True" Margin="5"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
+
+
