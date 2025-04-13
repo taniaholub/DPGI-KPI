@@ -1,5 +1,5 @@
-﻿using System.Data;
-using System.Windows;
+﻿using System.Windows;
+using System.Data;
 
 namespace Lab4
 {
@@ -18,78 +18,62 @@ namespace Lab4
             RefreshData();
         }
 
+        // Метод для оновлення даних у списку
         public void RefreshData()
         {
-            list.ItemsSource = _adoAssistant.TableLoad().DefaultView;
-        }
+            int selectedIndex = list.SelectedIndex;
+            list.DataContext = _adoAssistant.TableLoad();
 
-        private void list_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-        {
-            if (list.SelectedItem is DataRowView selected)
+            // Зберігаємо вибраний елемент, якщо можливо
+            if (list.Items.Count > 0)
             {
-                ClientIdBox.Text = selected["ClientId"].ToString();
-                ClientNameBox.Text = selected["ClientName"].ToString();
-                PhoneNumberBox.Text = selected["PhoneNumber"].ToString();
-                AddressBox.Text = selected["Address"].ToString();
-                OrderAmountBox.Text = selected["OrderAmount"].ToString();
+                list.SelectedIndex = selectedIndex >= 0 && selectedIndex < list.Items.Count
+                    ? selectedIndex
+                    : 0;
+                list.Focus();
             }
         }
 
+        // Обробник для додавання запису
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                string clientId = ClientIdBox.Text;
-                string clientName = ClientNameBox.Text;
-                string phone = PhoneNumberBox.Text;
-                string address = AddressBox.Text;
-                decimal amount = decimal.Parse(OrderAmountBox.Text);
-
-                _adoAssistant.AddClient(clientId, clientName, phone, address, amount);
-                RefreshData();
-                MessageBox.Show("Клієнта додано.");
-            }
-            catch (System.Exception ex)
-            {
-                MessageBox.Show("Помилка: " + ex.Message);
-            }
+            var createWindow = new CreateClientWindow();
+            createWindow.ShowDialog();
+            // Оновлюємо список після закриття вікна
+            RefreshData();
         }
 
+        // Обробник для оновлення запису
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
-            if (list.SelectedItem is DataRowView selected)
+            var selectedClient = list.SelectedItem as DataRowView;
+            if (selectedClient != null)
             {
-                try
-                {
-                    int clientId = int.Parse(ClientIdBox.Text);
-                    string clientName = ClientNameBox.Text;
-                    string phone = PhoneNumberBox.Text;
-                    string address = AddressBox.Text;
-                    decimal amount = decimal.Parse(OrderAmountBox.Text);
-
-                    _adoAssistant.UpdateClient(clientId, clientName, phone, address, amount);
-                    RefreshData();
-                    MessageBox.Show("Клієнта оновлено.");
-                }
-                catch (System.Exception ex)
-                {
-                    MessageBox.Show("Помилка при оновленні: " + ex.Message);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Оберіть клієнта для оновлення.");
+                var updateWindow = new UpdateClientWindow(selectedClient.Row);
+                updateWindow.ShowDialog();
+                // Оновлюємо список після закриття вікна
+                RefreshData();
             }
         }
 
+        // Обробник для видалення запису
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            if (list.SelectedItem is DataRowView selected)
+            var selectedClient = list.SelectedItem as DataRowView;
+            if (selectedClient != null)
             {
-                if (MessageBox.Show("Видалити цього клієнта?", "Підтвердження", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                if (MessageBox.Show("Ви впевнені, що хочете видалити цього клієнта?",
+                    "Підтвердження видалення", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 {
-                    _adoAssistant.DeleteClient((int)selected["ClientId"]);
-                    RefreshData();
+                    try
+                    {
+                        _adoAssistant.DeleteClient((int)selectedClient["ClientId"]);
+                        RefreshData();
+                    }
+                    catch (System.Exception ex)
+                    {
+                        MessageBox.Show("Помилка при видаленні клієнта: " + ex.Message);
+                    }
                 }
             }
         }
