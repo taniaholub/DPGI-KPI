@@ -1,0 +1,45 @@
+﻿<Window x:Class="Lab4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Lab4" Height="450" Width="800"
+        Loaded="Window_Loaded">
+
+    <DockPanel>
+        <ToolBar DockPanel.Dock="Top" Height="35">
+            <Button Name="CreateButton" Content="Create" Click="CreateButton_Click"/>
+            <Separator/>
+            <Button Name="UpdateButton" Content="Update" Click="UpdateButton_Click"/>
+            <Separator/>
+            <Button Name="DeleteButton" Content="Delete" Click="DeleteButton_Click"/>
+        </ToolBar>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <ListBox Grid.Column="0" Name="list" 
+                     Margin="10" 
+                     DisplayMemberPath="ClientName" 
+                     SelectionChanged="list_SelectionChanged"/>
+
+            <StackPanel Grid.Column="1" Margin="10">
+                <TextBlock Text="Client ID:"/>
+                <TextBox Name="ClientIdBox"/>
+
+                <TextBlock Text="Client Name:" Margin="0,5,0,0"/>
+                <TextBox Name="ClientNameBox"/>
+
+                <TextBlock Text="Phone Number:" Margin="0,5,0,0"/>
+                <TextBox Name="PhoneNumberBox"/>
+
+                <TextBlock Text="Address:" Margin="0,5,0,0"/>
+                <TextBox Name="AddressBox"/>
+
+                <TextBlock Text="Order Amount:" Margin="0,5,0,0"/>
+                <TextBox Name="OrderAmountBox"/>
+            </StackPanel>
+        </Grid>
+    </DockPanel>
+</Window>
