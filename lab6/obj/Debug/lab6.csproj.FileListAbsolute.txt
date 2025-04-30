@@ -1,0 +1,28 @@
+C:\Users\Тетяна\Desktop\3 курс\2 семестр\декларативне програмування\lab6\bin\Debug\lab6.exe.config
+C:\Users\Тетяна\Desktop\3 курс\2 семестр\декларативне програмування\lab6\bin\Debug\lab6.exe
+C:\Users\Тетяна\Desktop\3 курс\2 семестр\декларативне програмування\lab6\bin\Debug\lab6.pdb
+C:\Users\Тетяна\Desktop\3 курс\2 семестр\декларативне програмування\lab6\obj\Debug\lab6.csproj.AssemblyReference.cache
+C:\Users\Тетяна\Desktop\3 курс\2 семестр\декларативне програмування\lab6\obj\Debug\MainWindow.baml
+C:\Users\Тетяна\Desktop\3 курс\2 семестр\декларативне програмування\lab6\obj\Debug\MainWindow.g.cs
+C:\Users\Тетяна\Desktop\3 курс\2 семестр\декларативне програмування\lab6\obj\Debug\App.g.cs
+C:\Users\Тетяна\Desktop\3 курс\2 семестр\декларативне програмування\lab6\obj\Debug\lab6_MarkupCompile.cache
+C:\Users\Тетяна\Desktop\3 курс\2 семестр\декларативне програмування\lab6\obj\Debug\lab6.g.resources
+C:\Users\Тетяна\Desktop\3 курс\2 семестр\декларативне програмування\lab6\obj\Debug\lab6.Properties.Resources.resources
+C:\Users\Тетяна\Desktop\3 курс\2 семестр\декларативне програмування\lab6\obj\Debug\lab6.csproj.GenerateResource.cache
+C:\Users\Тетяна\Desktop\3 курс\2 семестр\декларативне програмування\lab6\obj\Debug\lab6.csproj.CoreCompileInputs.cache
+C:\Users\Тетяна\Desktop\3 курс\2 семестр\декларативне програмування\lab6\obj\Debug\lab6.exe
+C:\Users\Тетяна\Desktop\3 курс\2 семестр\декларативне програмування\lab6\obj\Debug\lab6.pdb
+C:\Users\Тетяна\Source\Repos\DPGI-KPI\lab6\bin\Debug\lab6.exe.config
+C:\Users\Тетяна\Source\Repos\DPGI-KPI\lab6\bin\Debug\lab6.exe
+C:\Users\Тетяна\Source\Repos\DPGI-KPI\lab6\bin\Debug\lab6.pdb
+C:\Users\Тетяна\Source\Repos\DPGI-KPI\lab6\obj\Debug\lab6.csproj.AssemblyReference.cache
+C:\Users\Тетяна\Source\Repos\DPGI-KPI\lab6\obj\Debug\MainWindow.baml
+C:\Users\Тетяна\Source\Repos\DPGI-KPI\lab6\obj\Debug\MainWindow.g.cs
+C:\Users\Тетяна\Source\Repos\DPGI-KPI\lab6\obj\Debug\App.g.cs
+C:\Users\Тетяна\Source\Repos\DPGI-KPI\lab6\obj\Debug\lab6_MarkupCompile.cache
+C:\Users\Тетяна\Source\Repos\DPGI-KPI\lab6\obj\Debug\lab6.g.resources
+C:\Users\Тетяна\Source\Repos\DPGI-KPI\lab6\obj\Debug\lab6.Properties.Resources.resources
+C:\Users\Тетяна\Source\Repos\DPGI-KPI\lab6\obj\Debug\lab6.csproj.GenerateResource.cache
+C:\Users\Тетяна\Source\Repos\DPGI-KPI\lab6\obj\Debug\lab6.csproj.CoreCompileInputs.cache
+C:\Users\Тетяна\Source\Repos\DPGI-KPI\lab6\obj\Debug\lab6.exe
+C:\Users\Тетяна\Source\Repos\DPGI-KPI\lab6\obj\Debug\lab6.pdb
